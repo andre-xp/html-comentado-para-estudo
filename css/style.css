@@ -1,0 +1,232 @@
+/* Variáveis CSS */
+:root {
+    --cor-primaria: #1a1a1a;
+    --cor-secundaria: #d4af37;
+    --cor-texto: #333;
+    --cor-fundo: #f9f9f9;
+    --cor-branco: #ffffff;
+    --fonte-primaria: 'Montserrat', sans-serif;
+    --fonte-secundaria: 'Playfair Display', serif;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: var(--fonte-primaria);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    height: 50px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banner.jpg') no-repeat center center;
+    background-size: cover;
+    color: var(--cor-branco);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.banner h1 {
+    font-family: var(--fonte-secundaria);
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Botão */
+.botao {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.botao:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    transform: translateY(-3px);
+}
+
+/* Seções */
+.titulo-secao {
+    font-family: var(--fonte-secundaria);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--cor-primaria);
+    position: relative;
+}
+
+.titulo-secao::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--cor-secundaria);
+    margin: 15px auto 0;
+}
+
+.servicos {
+    padding: 100px 0;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.servico {
+    background-color: var(--cor-branco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.servico:hover {
+    transform: translateY(-10px);
+}
+
+.servico img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.servico h3 {
+    font-size: 1.5rem;
+    margin: 20px 20px 10px;
+}
+
+.servico p {
+    margin: 0 20px 20px;
+    color: #666;
+}
+
+.preco {
+    display: block;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    font-size: 1.2rem;
+    margin: 0 20px 20px;
+}
+
+/* Sobre */
+.sobre {
+    padding: 100px 0;
+    background-color: var(--cor-branco);
+}
+
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.sobre-conteudo p {
+    margin-bottom: 20px;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 60px 0 0;
+}
+
+.rodape-coluna {
+    margin-bottom: 30px;
+}
+
+.rodape-coluna h3 {
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--cor-secundaria);
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+}
+
+.redes-sociais img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.redes-sociais img:hover {
+    transform: scale(1.2);
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu {
+        gap: 15px;
+    }
+
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .sobre-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,31 @@
+/* 
+   Reset CSS - Padroniza os estilos entre navegadores diferentes
+   Cada navegador tem estilos padrão diferentes, isso aqui "zera" tudo
+   para começarmos do mesmo ponto em qualquer navegador
+*/
+
+* {
+    /* Aplica para todos os elementos */
+    margin: 0;          /* Remove margens padrão */
+    padding: 0;         /* Remove paddings padrão */
+    box-sizing: border-box; /* Faz padding e border serem incluídos na largura */
+}
+
+body {
+    line-height: 1.6;   /* Espaçamento entre linhas do texto */
+}
+
+ul {
+    list-style: none;   /* Remove as bolinhas das listas */
+}
+
+a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: inherit;     /* Herda a cor do elemento pai */
+}
+
+img {
+    max-width: 100%;    /* Faz imagens não ultrapassarem seu container */
+    height: auto;       /* Mantém proporção ao redimensionar */
+    display: block;     /* Remove espaço extra abaixo da imagem */
+}

@@ -1,0 +1,211 @@
+/* 
+     Armazena cores em variaveis para melhorar a identaçao
+*/
+:root {
+    --cor-primaria: #1a1a1a;       /* Cor para textos e fundos */
+    --cor-secundaria: #d4af37;     /* Cor destaques */
+    --cor-texto: #333;             /* Cor textos */
+    --cor-fundo: #f9f9f9;          /* Cor de fundo*/
+    --cor-branco: #ffffff;         /* branco */
+    --fonte-primaria: 'Montserrat', sans-serif;       /* Fonte para textos normais */
+    --fonte-secundaria: 'Playfair Display', serif;    /* Fonte para títulos grandes */
+}
+
+/* Estilos Gerais */
+body {
+    font-family: var(--fonte-primaria); /* Usa a fonte definida na variável */
+    color: var(--cor-texto);           /* Cor do texto padrão */
+    background-color: var(--cor-fundo); /* Cor de fundo da página */
+}
+
+/*   Container - Classe usada para limitar a largura do conteúdo e centralizar na página  */
+.container {
+    width: 90%;             /* define a largura em 90% */
+    max-width: 1200px;      /* tambem define largura mas nao deixa passa 1200px */
+    margin: 0 auto;         /* define o espaco entre esse elemento e os que estao ao lado*/
+    padding: 0 15px;        /* define o espaço dentro do elemento e seu conteudo */
+}
+
+/* Estilos do Cabeçalho */
+.cabecalho {
+    background-color: var(--cor-primaria); /* esta definindo o fundo da imagen */
+    color: var(--cor-branco);              /* esta definindo a cor das letras */
+    padding: 20px 0;                      
+    position: fixed;                      /* esta definindo para que fique sempre no topo */
+    width: 100%;                          
+    z-index: 1000;                        /* faz com que ele fique acima dos outros */
+}
+
+.logo {
+    height: 50px; /* altura fixa para imagen */
+}
+
+.menu {
+    display: flex;       /* organizando os intens em linha */
+    gap: 30px;          /* esta definindo o espaco entre eles*/
+}
+
+.menu a {
+    font-weight: 700;               /* deixando o texot em uma fonte mais grossa*/
+    transition: color 0.3s;         /* mudanddo de cor quando passa o mouse */
+}
+
+.menu a:hover {
+    color: var(--cor-secundaria);   
+}
+
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banner.jpg') no-repeat center center;
+    /* imagen escurecida de fundo */
+    background-size: cover;     /* cobre todo o espaço */
+    color: var(--cor-branco);   
+    height: 100vh;              /* define a altura com base no tamanha da tela do usuario*/
+    display: flex;             
+    align-items: center;        /* Centraliza verticalmente */
+    text-align: center;         /* Centraliza horizontalmente */
+}
+
+.banner h1 {
+    font-family: var(--fonte-secundaria); 
+    font-size: 3.5rem;                   /* aulmenta o tamanho da fonte */
+    margin-bottom: 20px;                 /* define o Espaço abaixo do baner h1 */
+}
+
+
+.botao {
+    display: inline-block;      /* Permite definir largura/padding */
+    background-color: var(--cor-secundaria); 
+    color: var(--cor-primaria);              
+    padding: 12px 30px;                      
+    border-radius: 5px;                      
+    font-weight: 700;                        
+    transition: all 0.3s;                    /* Efeito suave em todas as propriedades */
+}
+
+.botao:hover {
+    background-color: var(--cor-primaria);    
+    color: var(--cor-secundaria);
+    transform: translateY(-3px);              
+}
+
+/* Estilos para Títulos de Seção */
+.titulo-secao {
+    font-family: var(--fonte-secundaria); 
+    font-size: 2.5rem;                   
+    text-align: center;                   
+    margin-bottom: 50px;                  
+    color: var(--cor-primaria);           
+    position: relative;                   
+}
+
+.titulo-secao::after {
+    content: '';                         
+    display: block;                      
+    width: 80px;                         
+    height: 3px;                         
+    background-color: var(--cor-secundaria); 
+    margin: 15px auto 0;                 
+}
+
+
+.servicos {
+    padding: 100px 0; 
+}
+
+.servicos-grid {
+    display: grid; /* deixa a estrutura em grade */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* cria e ajusta automaticamente */
+    gap: 30px; 
+}
+
+.servico {
+    background-color: var(--cor-branco); 
+    border-radius: 8px;                 /* deixa os Cantos arredondados */
+    overflow: hidden;                   /* esconde o que passa da linha */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s;         
+}
+
+.servico:hover {
+    transform: translateY(-10px);
+}
+
+.servico img {
+    width: 100%;                
+    height: 250px;              
+    object-fit: cover;          
+}
+
+.sobre {
+    padding: 100px 0;           
+    background-color: var(--cor-branco); 
+}
+
+.sobre-conteudo {
+    display: grid;                    
+    grid-template-columns: 1fr 1fr;     
+    gap: 50px;                          
+    align-items: center;                
+}
+
+
+.rodape {
+    background-color: var(--cor-primaria); 
+    color: var(--cor-branco);              
+    padding: 60px 0 0;                    
+}
+
+.rodape-coluna {
+    margin-bottom: 30px; /* Espaço entre colunas */
+}
+
+.rodape-coluna h3 {
+    font-family: var(--fonte-secundaria); 
+    font-size: 1.5rem;                   
+    margin-bottom: 20px;                 
+    color: var(--cor-secundaria);        
+}
+
+.redes-sociais {
+    display: flex;      
+    gap: 15px;         
+}
+
+.redes-sociais img {
+    width: 30px;       
+    height: 30px;
+    transition: transform 0.3s; 
+}
+
+.redes-sociais img:hover {
+    transform: scale(1.2); 
+}
+
+.copyright {
+    text-align: center;         
+    padding: 20px 0;            
+    background-color: rgba(0, 0, 0, 0.2); 
+    margin-top: 30px;           
+}
+
+
+@media (max-width: 768px) {
+    /* Quando a tela tiver no máximo 768px de largura */
+    
+    .menu {
+        gap: 15px; /* Reduz espaço entre itens do menu */
+    }
+
+    .banner h1 {
+        font-size: 2.5rem; 
+    }
+
+    .sobre-conteudo {
+        grid-template-columns: 1fr; /* Uma coluna só */
+    }
+
+    .servicos-grid {
+        grid-template-columns: 1fr; /* Uma coluna só */
+    }
+}
